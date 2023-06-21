@@ -75,4 +75,54 @@
         <tag>单例模式</tag>
       </tags>
   </entry>
+  <entry>
+    <title>策略模式</title>
+    <url>/2023/06/21/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<html><head></head><body><h1 id="1-模式简介"><a href="#1-模式简介" class="headerlink" title="1. 模式简介"></a>1. 模式简介</h1><blockquote>
+<p>策略模式： 定义一系列的算法，把它们一个个封装起来，并且使它们可以相互替换。</p>
+</blockquote>
+<h1 id="2-例子1：计算年终奖"><a href="#2-例子1：计算年终奖" class="headerlink" title="2. 例子1：计算年终奖"></a>2. 例子1：计算年终奖</h1><p>现在假设一个公司的年终奖是根据<strong>工资基数</strong>和<strong>绩效等级</strong>来发放的：</p>
+<table>
+<thead>
+<tr>
+<th>绩效等级</th>
+<th>年终奖数额</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>S</td>
+<td>四倍工资</td>
+</tr>
+<tr>
+<td>A</td>
+<td>三倍工资</td>
+</tr>
+<tr>
+<td>B</td>
+<td>两倍工资</td>
+</tr>
+</tbody></table>
+<figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">Strategies</span> = {</span><br><span class="line">	<span class="string">'S'</span>: <span class="function"><span class="params">salary</span> =&gt;</span> salary * <span class="number">4</span>,</span><br><span class="line">	<span class="string">'A'</span>: <span class="function"><span class="params">salary</span> =&gt;</span> salary * <span class="number">3</span>,</span><br><span class="line">	<span class="string">'B'</span>: <span class="function"><span class="params">salary</span> =&gt;</span> salary * <span class="number">2</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">calculateBonus</span> = (<span class="params">performanceLevel,salary</span>)=&gt;{</span><br><span class="line">	<span class="keyword">return</span> <span class="title class_">Strategies</span>[prefformanceLevel](salary);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="title function_">calculateBonus</span>(<span class="string">'S'</span>,<span class="number">15000</span>) <span class="comment">//60000</span></span><br></pre></td></tr></tbody></table></figure>
+<p>在传统面向对象语言中，要实现策略模式需要定义</p>
+<ol>
+<li>一组策略类，策略类封装了具体的算法。</li>
+<li>环境类 Context，Context 接受客户的请求，随后将请求委托给某一个策略类。</li>
+</ol>
+<p>太麻烦了。而 JavaScript 则由于它丰富的表达能力，可以将<code>calculateBonus</code>函数看成是Context，将<code>Strategies</code>对象看成一组策略，轻松地实现了一个策略模式。</p>
+<p><strong>额外的tips</strong><br>上文的写法其实还有个小问题，就是 performanceLevel 这个变量是硬编码的，比如<code>"S"</code>,&nbsp;<code>"A"</code>,&nbsp;<code>"B"</code>。这么短的一个字符可能不会带来什么问题，但假设这个策略的名称比较长，比如<code>"Christina"</code>，那你就很容易敲错，敲错就出 bug 了嘛。</p>
+<p>我们可以用ES6的<a href="http://es6.ruanyifeng.com/#docs/symbol">Symbol</a>和<a href="http://es6.ruanyifeng.com/#docs/destructuring">解构</a>把它改写一下：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="variable constant_">PERFORMANCE_LEVEL</span> = {<span class="attr">S</span>:<span class="string">'S'</span>, <span class="attr">A</span>: <span class="string">'A'</span>, <span class="attr">B</span>: <span class="string">'B'</span>};  </span><br><span class="line"><span class="keyword">const</span> {S, A, B}  = <span class="variable constant_">PERFORMANCE_LEVEL</span>;  </span><br><span class="line"><span class="keyword">const</span> <span class="title class_">Strategies</span> = {  </span><br><span class="line">  [S]: <span class="function"><span class="params">salary</span>=&gt;</span> salary * <span class="number">4</span>,  </span><br><span class="line">  [A]: <span class="function"><span class="params">salary</span>=&gt;</span> salary * <span class="number">3</span>,  </span><br><span class="line">  [B]: <span class="function"><span class="params">salary</span>=&gt;</span> salary * <span class="number">2</span>,  </span><br><span class="line">}  </span><br><span class="line"><span class="keyword">const</span> <span class="title function_">calculateBonus</span> = (<span class="params">performanceLevel, salary</span>) =&gt;{  </span><br><span class="line">  <span class="keyword">return</span> <span class="title class_">Strategies</span>[performanceLevel](salary);  </span><br><span class="line">}  </span><br><span class="line">  </span><br><span class="line"><span class="title function_">calculateBonus</span>(S, <span class="number">15000</span>); <span class="comment">// 60000</span></span><br></pre></td></tr></tbody></table></figure>
+
+<blockquote>
+<p>在函数作为一等对象的语言中，策略模式是隐形的。strategy就是值作为函数的变量。</p>
+</blockquote>
+</body></html>]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
+      <tags>
+        <tag>设计模式</tag>
+        <tag>策略模式</tag>
+      </tags>
+  </entry>
 </search>
