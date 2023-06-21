@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
+    <title>单例模式</title>
     <url>/2023/06/21/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</url>
     <content><![CDATA[<html><head></head><body><h1 id="1-模式简介"><a href="#1-模式简介" class="headerlink" title="1.模式简介"></a>1.模式简介</h1><blockquote>
 <p>单例模式：限制类实例化次数只能一次，一个类只有一个实例，并提供一个访问它的全局访问点。</p>
@@ -67,5 +67,12 @@
 </ul>
 <p><em>TIPS: 多线程编程语言中，单例模式会涉及同步锁的问题。而 JavaScript 是单线程的编程语言，暂可忽略该问题。</em></p>
 </body></html>]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
+      <tags>
+        <tag>设计模式</tag>
+        <tag>单例模式</tag>
+      </tags>
   </entry>
 </search>
