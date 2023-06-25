@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://liaojunjie666.github.io/2023/06/21/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</loc>
+    
+    <lastmod>2023-06-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://liaojunjie666.github.io/guestbook/index.html</loc>
     
     <lastmod>2023-06-25</lastmod>
@@ -47,15 +56,6 @@
   </url>
   
   <url>
-    <loc>https://liaojunjie666.github.io/2023/06/21/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</loc>
-    
-    <lastmod>2023-06-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://liaojunjie666.github.io/2023/06/21/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/</loc>
     
     <lastmod>2023-06-21</lastmod>
@@ -81,14 +81,14 @@
   </url>
   
   <url>
-    <loc>https://liaojunjie666.github.io/tags/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://liaojunjie666.github.io/tags/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</loc>
     <lastmod>2023-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://liaojunjie666.github.io/tags/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://liaojunjie666.github.io/tags/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/</loc>
     <lastmod>2023-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
